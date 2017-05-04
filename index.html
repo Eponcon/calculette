@@ -2,38 +2,230 @@
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
-    <title>Calculette</title>
+        
+<link href="https://fonts.googleapis.com/css?family=Quicksand:700" rel="stylesheet">
+   
+     <title>Calcultounet</title>
 
     <style>
         
+        body {
+            background-image: url(images/background.png);
+            background-size: cover;
+            background-repeat: no-repeat;
+            font-family: 'Quicksand', sans-serif;
+            font-weight: bold;
+            
+        }
+        
+     .calculatrice {
+        width: 1200px;
+        margin:auto;
+        padding: 0px;
+        display:flex;
+        flex-wrap: wrap;
+        justify-content: center; 
+    
+         
+        }  
+        
+        .calculette {
+            background-color: #FFD4E8;
+            border-radius: 10px 10px;
+            width: 830px;
+            height: 650px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            box-shadow: 8px 8px 12px #aaa;
+        }
+        
+        
+    h2 {
+        font-size: 60px;
+        color: #060069;
+        margin-bottom: 50px;
+        width: 100%;
+        text-align: center;
+       
+        }
+       
+
+        
     .clavier {
-      width: 800px;
-      height: 200px;
-      background-color: navajowhite;
+    height: 200px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content:space-between;
+    margin-left: 30px;
+    margin-right: 30px;
+    margin-bottom: 60px;
+      
+      
         }
         
     .touche {
         color:black; 
-        width: 50px;
-        height: 50px;
+        font-size : 30px;
+        width: 70px;
+        height: 70px;
         background-color: white;
+        margin: 15px;
+        border-radius: 8px 8px;
+        background-color: #FDF693; 
+        color:  #060069;
+        box-shadow: 4px 4px 8px #aaa;
+        border-color: transparent;
         }
         
-        .touche:hover {
-           cursor:pointer; 
-           
+          div.clavier > button:nth-child(11),
+        div.clavier > button:nth-child(12),
+         div.clavier > button:nth-child(13),
+        div.clavier > button:nth-child(14){
+        background-color:#BCEEED ; 
+        color:  #060069;
+        }
+        
+       
+       
+        
+        .egal {
+            background-color: #99EAC2;
+            border-radius: 8px 8px;
+            width:  65%;
+            height: 70px;
+            border-color: aqua;
+            font-size: 60px;
+            color: #060069;
+              border-color: transparent;
+            box-shadow: 4px 4px 8px #aaa;
+
+        }
+        .reset {
+            background-color: #FDA1AD;
+            color : #060069;
+            width : 20%;
+            height: 70px;
+            font-size: 40px;
+            color: #060069;
+            border-radius: 8px 8px;
+            border-color: transparent;
+            box-shadow: 4px 4px 8px #aaa;
+            
+        } 
+    .touche:hover,
+    .egal:hover,
+    .reset:hover{
+           cursor: pointer;
+        
+        }
+        
+        
+        @-webkit-keyframes hvr-buzz {
+  50% {
+    -webkit-transform: translateX(3px) rotate(2deg);
+    transform: translateX(3px) rotate(2deg);
+  }
+  100% {
+    -webkit-transform: translateX(-3px) rotate(-2deg);
+    transform: translateX(-3px) rotate(-2deg);
+  }
+}
+@keyframes hvr-buzz {
+  50% {
+    -webkit-transform: translateX(3px) rotate(2deg);
+    transform: translateX(3px) rotate(2deg);
+  }
+  100% {
+    -webkit-transform: translateX(-3px) rotate(-2deg);
+    transform: translateX(-3px) rotate(-2deg);
+  }
+}
+.touche {
+  display: inline-block;
+  vertical-align: middle;
+  -webkit-transform: perspective(1px) translateZ(0);
+  transform: perspective(1px) translateZ(0);
+  box-shadow: 0 0 1px transparent;
+}
+.touche:hover, .touche:focus, .touche:active {
+  -webkit-animation-name: hvr-buzz;
+  animation-name: hvr-buzz;
+  -webkit-animation-duration: 0.15s;
+  animation-duration: 0.15s;
+  -webkit-animation-timing-function: linear;
+  animation-timing-function: linear;
+  -webkit-animation-iteration-count: infinite;
+  animation-iteration-count: infinite;
+}
+        
+        .touche:active,
+        .touche:focus{
+        background-color: #060069;
+        color: #FDF693;    
+            
+        }
+   
+        .affichage {
+            background-color: #FDF693;
+            border : none;
+            margin-top: 60px;
+            margin-bottom: 80px;
+            border-radius: 5px 5px;
+            height: 120px;
+        padding-right:20px;
+        padding-left: 20px;
+            width: 70%;
+            color: #060069;
+            font-size: 60px;
+            letter-spacing: 10px;
+        }
+        
+        .ligne-bas {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 720px;
+            height: auto;
+        }
+        
+        
+        
+        
+        
+        div.clavier > button:nth-child(11):focus,
+        div.clavier > button:nth-child(12):focus,
+         div.clavier > button:nth-child(13):focus,
+        div.clavier > button:nth-child(14):focus{
+         background-color: #060069;
+        color: #FDF693;     
         }
     </style>
+    
+    
+    
+    
+    
     
 </head>
 
 <body>
-  
-<input class="affichage" value="">
-<div class="clavier"></div>
-   <button class="egal">=</button>
-   <button class="reset">C</button>
+<section class="calculatrice">
+    <h2>COMBIEN LA MIGNONNE ? </h2>
+        <div class="calculette">
+            <input class="affichage" value="">
     
+            <div class="clavier"></div>
+    
+            
+            <div class="ligne-bas">
+                <button class="egal">=</button>
+    
+                <button class="reset">C</button> 
+            </div>
+        </div>
+        
+ </section>   
     
     
   <script src ="js/calcul.js"></script>  
