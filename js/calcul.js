@@ -1,6 +1,6 @@
 // générer un clavier
 var clavier = document.querySelector(".clavier");
-for (char of "0123456789-+*/") {
+for (char of "0123456789-+*/%") {
     clavier.innerHTML += "<button class='touche' value=''>" + char + "</button>";
 }
 
